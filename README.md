@@ -29,7 +29,7 @@ ewsletter_renderer.py\** - Takes the raw JSON newsletter output and uses Playwri
 
 ## Deployment (Render.com)
 
-This repository is ready to be pushed to GitHub and deployed on Hugging Face Spaces using the provided \Dockerfile\.
+This repository is ready to be pushed to GitHub and deployed on Render Spaces using the provided \Dockerfile\.
 
 ### Steps to Deploy:
 1. Push this repository to your company's GitHub.

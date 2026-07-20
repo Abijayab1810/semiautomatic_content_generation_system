@@ -200,12 +200,11 @@ def run_pipeline(execution_id: int):
             db.commit()
 
         # --- 3. BUILD INTERACTIVE URLS ---
-        frontend_url = os.getenv("FRONTEND_URL", "http://localhost:3000")
-        backend_url = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+        from core.config import FRONTEND_URL, BACKEND_URL
         
-        edit_url = f"{frontend_url}/review?token={token}"
-        approve_url = f"{backend_url}/api/webhook/approve?token={token}"
-        share_url = f"{backend_url}/newsletters/edition_{execution.id}.html"
+        edit_url = f"{FRONTEND_URL}/review?token={token}"
+        approve_url = f"{BACKEND_URL}/api/webhook/approve?token={token}"
+        share_url = f"{BACKEND_URL}/newsletters/edition_{execution.id}.html"
 
         # --- 4. RENDER AND SAVE COMBINED HTML ---
         newsletter_html = render_dual_newsletter_email_html(
@@ -278,8 +277,11 @@ def run_pipeline(execution_id: int):
             for aud_key, img_path in png_paths.items():
                 if img_path:
                     # Create a nice Telegram caption
+                    aud_data = payload.get("editions", payload).get(aud_key, {})
+                    intro_text = aud_data.get("intro", "The AI has finished writing the newsletter.")
+                    
                     caption = f"🚀 <b>New AI Poster: {config_dict['edition_title']}</b>\n\n"
-                    caption += "The AI has finished writing the newsletter. Check it out on the web dashboard!\n"
+                    caption += f"{intro_text}\n\n"
                     caption += f"<a href='{share_url}'>🌐 Read Full Newsletter</a>"
                     
                     send_poster_to_telegram(img_path, caption)

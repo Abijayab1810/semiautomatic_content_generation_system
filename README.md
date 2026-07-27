@@ -1,6 +1,8 @@
 # Inker Robotics Poster Automation Platform
 
 This repository contains the completely finalized, streamlined architecture for the Inker Robotics automated newsletter and poster generator. 
+<img width="334" height="458" alt="image" src="https://github.com/user-attachments/assets/7c5a9a85-7d46-4d88-acb9-1fddad3bd5ae" />
+
 
 ## Project Architecture
 

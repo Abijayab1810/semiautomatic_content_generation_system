@@ -5,6 +5,7 @@ This repository contains the completely finalized, streamlined architecture for 
 <img width="334" height="458" alt="image" src="https://github.com/user-attachments/assets/7c5a9a85-7d46-4d88-acb9-1fddad3bd5ae" />
 
 ---
+<img width="519" height="473" alt="image" src="https://github.com/user-attachments/assets/91a08deb-a2ac-4e0c-a960-9f66613b3ebd" />
 
 ## 🎯 What It Does
 
